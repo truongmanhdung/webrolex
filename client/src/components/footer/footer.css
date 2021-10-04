@@ -1,0 +1,148 @@
+.footer-link{
+  max-width: 1110px;
+  margin: 0 auto;
+}
+.container-fluid{
+  padding: 0 !important;
+}
+.footer-top {
+    position: relative;
+  }
+  .footer-top:hover .footer-content-p {
+    background-color: white;
+    color: black !important;
+  }
+  .footer-img {
+    overflow: hidden;
+  }
+  .footer-top:hover .footer-img img {
+    transform: scale(1.1);
+  }
+  .footer-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: all linear 0.5s;
+  }
+  .footer-content {
+    position: absolute;
+    left: 40%;
+    top: 33%;
+  }
+  .footer-heading {
+    font-size: 30px;
+  }
+  .footer-top a{
+    text-decoration: none;
+  }
+  .footer-content-p {
+    
+    border: 1px solid white;
+    padding: 10px 20px;
+    width: 200px;
+    text-align: center;
+    margin: 20px auto;
+    background-color: transparent;
+    border-radius: 30px;
+    transition: all linear 0.5s;
+  }
+  .footer-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .footer-share-list{
+    list-style: none;
+    text-align: center;
+  }
+  .footer-share-item{
+    display: inline-block;
+    margin: 0px 20px;
+    background-color: rgba(73, 71, 71, 0.5);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color linear 0.35s;
+  }
+  .footer-share-item i{
+    transition: color linear 0.35s;
+  }
+  .footer-share-item:hover i{
+      color: #ffffff !important;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important;
+    color: unset;
+}
+
+
+.footer-image-pay {
+    max-width: 50px;
+}
+
+#gender {
+    background: #f8f7f4;
+    border: 1px solid #d6d6d4;
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: .02em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.email-input {
+    width: 100%;
+    background: #f8f7f4;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: .02em;
+    color: #161a21;
+    padding: 13px;
+    border: 1px solid #d6d6d4;
+}
+
+.name-input {
+    background: #f8f7f4;
+    width: 100%;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: .02em;
+    color: #161a21;
+    padding: 13px 60px 12px 13px;
+    border: 1px solid #d6d6d4;
+}
+
+.sign-up {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background-color: #979797;
+}
+
+.tablink {
+    cursor: pointer;
+}
+
+.tablink.active {
+    color: #00aefd;
+}

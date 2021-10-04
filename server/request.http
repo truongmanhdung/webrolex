@@ -1,0 +1,92 @@
+POST http://localhost:8866/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "dungtmph12934@fpt.edu.vn",
+    "password": "123"
+}
+
+
+###
+
+POST http://localhost:8866/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123"
+}
+
+
+###
+GET http://localhost:8866/api/categorys
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+
+###
+POST http://localhost:8866/api/categorys
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+{
+   "title": "Đồng hồ Nam",
+    "imageURL": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0012_m116519ln-0038-cosmograph-daytona.jpg?imwidth=420",
+    "videoURL": "https://rolex.com/dam/watches/hubs/all-watches/videos/hub-collection-watches-cover.mp4"
+}
+
+
+###
+PUT http://localhost:8866/api/categorys/615865ee71363244c9307c67
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+{
+    "title": "Đồng hồ Hublot",
+    "imageURL": "https://content.rolex.com/dam/homepage/hss/roller/watches/submariner/homepage-rolex-submariner.jpg?imwidth=38",
+    "videoURL": "https://content.rolex.com/dam/watches/hubs/all-watches/videos/hub-collection-watches-cover.mp4"
+}
+
+
+###
+
+DELETE  http://localhost:8866/api/categorys/615491877ec6d24dfc464cf6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+###
+GET http://localhost:8866/api/products
+
+###
+POST http://localhost:8866/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+{
+    "title": "Đồng hồ Nữ",
+    "description": "Đồng hồ thời đỉnh cao",
+    "price": 15425522,
+    "imageURL": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0003_m126200-0020-datejust.jpg?imwidth=420",
+    "category": "615ab0248256769ab074cc8c"
+}
+
+
+###
+
+PUT http://localhost:8866/api/products/615514826ba3901696aa7794
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+{
+    "title": "Đồng hồ Nữ",
+    "description": "Đồng hồ thời thượng",
+    "price": 15425522,
+    "imageUrl": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0003_m126200-0020-datejust.jpg?imwidth=420",
+    "category": "61546e5bc54aecd8d7ad5877"
+}
+
+
+###
+
+DELETE http://localhost:8866/api/products/615514826ba3901696aa7794
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk

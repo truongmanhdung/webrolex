@@ -1,0 +1,26 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "webpack serve --open --mode development",
+    "dev_css": "npx tailwindcss -i tailwind.css -o dist/main.css --minify --watch",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "firebase": "^9.1.1",
+    "navigo": "^8.11.1",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

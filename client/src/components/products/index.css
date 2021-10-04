@@ -1,0 +1,29 @@
+.backgroud-image{
+    position: relative;
+    height: 83px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("https://luxurys.com.vn/wp-content/uploads/2021/02/wot_desktop_2880x1425_0004_corail02-scaled.jpg");
+}
+.backgroud-ovelay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item-image {
+    padding: 10px;
+    cursor: pointer;
+  }
+  .item-wrap .active-img {
+    border: 1px solid red;
+  }
+  .content-img {
+    display: none;
+  }
+  .content-wrap .active-img {
+    display: block !important;
+  }
