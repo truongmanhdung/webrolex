@@ -1,11 +1,19 @@
-import ProductsNew from "../components/products/productnew";
-import data from "../apis/datafake";
 import Product from "../components/products/product";
-const { products, categories } = data;
-const product_list_page = products.slice(0, 8);
+import CategoryApi from "../apis/categoryApi";
+import ProductApi from "../apis/productApi";
+import convertToUrl from "../common/convertToUrl";
+import Header from "../components/header";
+import Footer from "../components/footer";
+
+
 const HomePage = {
-  render() {
+  async render() {
+    const categories = await (await CategoryApi.getListLimit(4)).data.categorys
+    const product_list_page = await (await ProductApi.getLimit(8)).data.products
+    const product_list_page2 = await (await ProductApi.getSkip(8, 8)).data.products
     return `
+            ${await Header.render()}
+            
             <div class="overlay2">
      
             </div>
@@ -17,7 +25,7 @@ const HomePage = {
                 <div class="home-positions">
                     <h3 class="text-center text-white text-uppercase">Datejust</h3>
                     <p class="text-center text-white text-uppercase">Đồng hồ biểu tượng của phong cách cổ điển</p>
-                    <a href="./product" class="d-block mx-auto view2"><span>XEM BỘ SƯU TẬP</span></a>
+                    <a href="/#/product" class="d-block mx-auto view2"><span>XEM BỘ SƯU TẬP</span></a>
                 </div>
             </div>
                 <div class="container">
@@ -28,9 +36,11 @@ const HomePage = {
                         ${categories
                           .map(
                             (item) =>
-                              `<div class="col-3 mb-4 category-item" key="${item.id}">
-                                <a href='/category/${item.id}'>
-                                    <div class="category-image"><img width="100%" src="${item.imageUrl}" alt=""></div>
+                              `<div class="col-3 mb-4 category-item" key="${item.id}" >
+                                <a href='/#/category/${convertToUrl(
+                                    item.title
+                                  )}'>
+                                    <div class="category-image"><img width="100%" src="${item.imageURL}" alt=""></div>
                                     <p class="category-title pt-2 m-0">${item.title}</p>
                                     <p class="category-add m-0">Tìm hiểm thêm</p>
                                 </a>
@@ -39,18 +49,33 @@ const HomePage = {
                           .join("")}
                 </div>
                     </div>
-                    <h5 class="my-4">Đồng hồ Cổ điển</h5>
-                    <div >
-                        <div class="row">
-                            ${product_list_page
-                            .map((item) => Product.render(item))
-                            .join("")}
+                    <div>
+                        <h5 class="my-4">Đồng hồ Cổ điển</h5>
+                        <div >
+                            <div class="row">
+                                ${product_list_page
+                                .map((item) => Product.render(item))
+                                .join("")}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="my-4">Đồng hồ mới nhất</h5>
+                        <div >
+                            <div class="row">
+                                ${product_list_page2
+                                .map((item) => Product.render(item))
+                                .join("")}
+                            </div>
                         </div>
                     </div>
                 </div>
+                ${Footer.render()}
             `;
   },
-  
+  afterRender(){
+      Header.afterRender()
+  }
 };
 
 export default HomePage;

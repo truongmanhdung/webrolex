@@ -1,4 +1,7 @@
 import UserApi from "../../apis/userApi"
+import { reRender } from "../../utils/rerender"
+import HomePageAdmin from "../Admin/pageAdmin/homePageAdmin"
+import HomePage from "../HomePage"
 
 const Login = {
     render() {
@@ -70,14 +73,52 @@ const Login = {
         )
     },
     afterRender(){
-        document.querySelector('#login-form').addEventListener("submit", (e) => {
+        document.querySelector('#login-form').addEventListener("submit", async (e) => {
             e.preventDefault()
             const user = {
                 username: document.querySelector('#username').value,
                 password: document.querySelector('#password').value
             }
-            const result = UserApi.login(user);
-            console.log(result);
+            UserApi.login(user).then((res) => {
+                if(res.status === 200){
+                    localStorage.setItem('token', res.data.token);
+                    
+                    if(res.data.admin === true){
+                        localStorage.setItem('username', 'admin');
+                        Toastify({
+                            text: res.data.message,
+                            className: "info",
+                            style: {
+                              background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                          }).showToast();
+                        reRender(HomePageAdmin, '#root')
+                        window.location.hash = '/admin'
+                    }else{
+                        localStorage.setItem('username', res.data.username);
+                        Toastify({
+                            text: res.data.message,
+                            className: "info",
+                            style: {
+                              background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                        reRender(HomePage, '#root')
+                        window.location.hash = '/'
+                    }
+                }
+            }).catch(error => {
+                Toastify({
+                    text: 'login not success',
+                    className: "danger",
+                    style: {
+                        background: "linear-gradient(to right, #ff0011, #bb321f)",
+                    }
+                }).showToast();
+                reRender(Login, '#root')
+                window.location.hash = '/login'
+            });
+            
         })
     }
 }

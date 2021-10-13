@@ -1,56 +1,69 @@
 import navbarLeft from "../../components/navbarLeft";
 import navbarTop from "../../components/navbarTop";
 import "../../../../firebase";
-import { reRender } from "../../../../utils/rerender";
-import CategoryApi from "../../../../apis/categoryApi";
-import ProductApi from "../../../../apis/productApi";
-import ProductPageAdmin from "./productPageAdmin";
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
-  uploadBytes,
 } from "firebase/storage";
-const ProductAddForm = {
-  async render() {
+import { reRender } from "../../../../utils/rerender";
+import CategoryApi from "../../../../apis/categoryApi";
+import ProductApi from "../../../../apis/productApi";
+import ProductPageAdmin from "./productPageAdmin";
+
+const ProductEditForm = {
+  async render({ id }) {
     const listcategoris = await CategoryApi.getAll();
     const categories = await listcategoris.data.categorys;
+    const dataproduct = await (await ProductApi.getID(id)).data.product;
     const content = () => {
       return `
               <div class="container">
-                <form enctype="multipart/form-data" id="form-add">
+                <form enctype="multipart/form-data" id="form-add" data-id="${
+                  dataproduct._id
+                }">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Tên sản phẩm</label>
-                    <input type="text" id="title" class="form-control">
+                    <input type="text" id="title" value="${
+                      dataproduct.title
+                    }" class="form-control">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mô tả</label>
-                    <input type="text" id="desc" class="form-control">
+                    <input type="text" id="desc" value="${
+                      dataproduct.description
+                    }" class="form-control">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Giá</label>
-                    <input type="number" id="price" class="form-control">
+                    <input type="text" id="price" value="${
+                      dataproduct.price
+                    }" class="form-control">
                   </div>
+
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Danh mục</label>
+                    
                     <select name="" id="category" class="form-control" required="required">
-                        ${categories
-                          .map(
-                            (category) =>
-                              `<option value="${category._id}">${category.title}</option>`
-                          )
-                          .join("")}
+                        ${categories.map(
+                          (category) =>
+                            `<option value="${category._id}">${category.title}</option>`
+                        ).join("")}
                         
                     </select>
+                    
                   </div>
                   <div class="mb-3 align-items-center d-flex">
-                        <label for="imgInp" class="form-label me-3">Thêm ảnh</label>
-                        <label for="imgInp" class="addImage d-flex">
-                            <img class="" width="100px" src="./src/publics/image/add.png" alt="" id="blah2">
-                        </label>
-                        <input type="file" multiple name="image_category" class="imageadd" id="imgInp" hidden>
-                    </div>
+                    <img class="" width="100px" src="${
+                      dataproduct.imageURL
+                    }" alt="">
+                    <img class="mx-4" width="100px" src="https://cdn.pixabay.com/photo/2012/04/05/01/58/arrow-25864_640.png" alt="">
+                    <label for="imgInp">
+                        <img class="" width="100px" src="./src/publics/image/add.png" alt="" id="blah2">
+                    </label>
+                    <input type="file" name="image_category" class="imageadd" id="imgInp" hidden>
+                        </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>
@@ -87,20 +100,15 @@ const ProductAddForm = {
 
   afterRender() {
     imgInp.onchange = (evt) => {
-      const files = [...imgInp.files];
-      document.querySelector(".addImage").innerHTML = files
-        .map(
-          (file) =>
-            `<img style="margin: 0 10px" src="${URL.createObjectURL(
-              file
-            )}" width="100px" />`
-        )
-        .join("");
+      const [file] = imgInp.files;
+      if (file) {
+        blah2.src = URL.createObjectURL(file);
+      }
     };
 
-    const addForm = document.querySelector("#form-add");
-    addForm.addEventListener("submit", async (e) => {
+    document.querySelector("#form-add").addEventListener("submit", async (e) => {
       e.preventDefault();
+      const id = document.querySelector("#form-add").getAttribute("data-id");
       const storage = getStorage();
       const ImageList = document.querySelector(".imageadd").files;
       const listImage = [...ImageList];
@@ -120,6 +128,7 @@ const ProductAddForm = {
           listImageUrl.push(response)
         });
       }
+
       const product = {
         title: document.querySelector("#title").value,
         description: document.querySelector("#desc").value,
@@ -127,7 +136,7 @@ const ProductAddForm = {
         category: document.querySelector("#category").value,
         imageURL: listImageUrl,
       };
-      const success =  await ProductApi.post(product);
+      const success =  await ProductApi.put(id,product);
       if(success.status === 200) {
         reRender(ProductPageAdmin, "#showBody");
         window.location.hash = "/adminproduct";
@@ -140,16 +149,16 @@ const ProductAddForm = {
         }).showToast();
       }else{
         Toastify({
-            text: 'add product not success',
+            text: 'edit product not success',
             className: "danger",
             style: {
                 background: "linear-gradient(to right, #ff0011, #bb321f)",
             }
           }).showToast();
-          reRender(ProductAddForm, '#root')
+          reRender(ProductEditForm, '#root')
       };
     });
   },
 };
 
-export default ProductAddForm;
+export default ProductEditForm;

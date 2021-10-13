@@ -76,15 +76,34 @@ const CategoryAddForm = {
       const uploadTask = uploadBytesResumable(storageRef, categoryImage);
       uploadTask.on('state_changed',
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
               const category = {
                 title: document.querySelector("#categoryTitle").value,
                 imageURL: downloadURL,
                 videoURL: document.querySelector("#categoryUrlVideo").value
               }
-              CategoryApi.post(category);
-              reRender(CategoryPageAdmin, '#showBody')
-              window.location.hash = '/admincategory'
+              const data = await CategoryApi.put(id,category);
+              if(data.status === 200){
+                reRender(CategoryPageAdmin, '#showBody')
+                window.location.hash = '/admincategory'
+                Toastify({
+                  text: data.data.message,
+                  className: "info",
+                  style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                  }
+                }).showToast();
+              }
+              else{
+                Toastify({
+                    text: 'add category not success',
+                    className: "danger",
+                    style: {
+                        background: "linear-gradient(to right, #ff0011, #bb321f)",
+                    }
+                  }).showToast();
+                  reRender(CategoryAddForm, '#root')
+              };
           });
         }
       );

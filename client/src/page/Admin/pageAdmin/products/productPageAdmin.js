@@ -1,17 +1,19 @@
 import CategoryApi from "../../../../apis/categoryApi";
 import ProductApi from "../../../../apis/productApi";
+import { reRender } from "../../../../utils/rerender";
 import navbarLeft from "../../components/navbarLeft";
 import navbarTop from "../../components/navbarTop";
-
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify-es"
 const ProductPageAdmin = {
   async render() {
-    const listProducts = await ProductApi.getAll();
+    const listProducts = await ProductApi.getByCategory();
     const products = await listProducts.data.products;
-    const content = () =>  {
+    const content = () => {
       return `
 
             <div class="container">
-            <a href="/#/categoryadd" class="btn btn-primary my-2">Thêm sản phẩm</a>
+            <a href="/#/productadd" class="btn btn-primary my-2">Thêm sản phẩm</a>
             <table class="table table-hover">
             <thead>
                 <tr>
@@ -32,14 +34,15 @@ const ProductPageAdmin = {
                       `
                     <tr style="verticle-align: middle; vertical-align: middle;">
                         <td class="text-center">${index + 1}</td>
-                        <td class="text-center">${item.title}</td>
-                        <td class="text-justify" style="width: 200px">${
-                          item.description}</td>
+                        <td class="">${item.title}</td>
+                        <td class="" style="width: 200px">${
+                          item.description
+                        }</td>
                         <td class="text-center">
-                            <img width="100" src="${item.imageURL}" />
+                            <img width="100" src="${item.imageURL[0]}" />
                         </td>
                         <td class="text-center">${item.price}</td>
-                        <td class="text-center">${ showCategory(item.category)}</td>
+                        <td class="text-center">${item.title}</td>
                         <td class="text-center">${item.createdAt}</td>
                         
                         <td class="text-center"> 
@@ -61,10 +64,7 @@ const ProductPageAdmin = {
         </div>
         `;
     };
-    const showCategory =  async (id) => {
-      const category = await (await CategoryApi.getID(id)).data.category.title
-      return category
-    }
+
     return `<div class="adminroot">
             <div id="wrapper">
               <!-- Sidebar -->
@@ -91,6 +91,27 @@ const ProductPageAdmin = {
               <i class="fas fa-angle-up"></i>
             </a>
           </div>`;
+  },
+  afterRender() {
+    const deleteBtn = document.querySelectorAll(".deleteBtn");
+    deleteBtn.forEach((item) => {
+      item.addEventListener("click", async () => {
+        const id = item.getAttribute("data-id");
+        if (window.confirm("Bạn có muốn xóa sản phẩm này không")) {
+          const deleteSuccess = await ProductApi.delete(id);
+          if (deleteSuccess.status === 200) {
+            Toastify({
+              text: deleteSuccess.data.message,
+              className: "info",
+              style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+              }
+            }).showToast();
+            reRender(ProductPageAdmin, "#showBody");
+          }
+        }
+      });
+    });
   },
 };
 

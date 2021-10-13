@@ -1,29 +1,92 @@
-.backgroud-image{
-    position: relative;
-    height: 83px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url("https://luxurys.com.vn/wp-content/uploads/2021/02/wot_desktop_2880x1425_0004_corail02-scaled.jpg");
+*{
+  margin: 0;
+  padding: 0;
 }
-.backgroud-ovelay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+
+.backgroud-image {
+  position: relative;
+  height: 83px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url("https://luxurys.com.vn/wp-content/uploads/2021/02/wot_desktop_2880x1425_0004_corail02-scaled.jpg");
+}
+.backgroud-ovelay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .item-image {
-    padding: 10px;
-    cursor: pointer;
-  }
-  .item-wrap .active-img {
-    border: 1px solid red;
-  }
-  .content-img {
-    display: none;
-  }
-  .content-wrap .active-img {
-    display: block !important;
-  }
+  padding: 10px;
+  cursor: pointer;
+}
+.item-wrap .active-img {
+  border: 1px solid red;
+}
+.content-img {
+  display: none;
+}
+.content-wrap .active-img {
+  display: block !important;
+}
+
+.paginationjs-pages ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginationjs-prev,
+.paginationjs-page,
+.paginationjs-next {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s linear;
+}
+.paginationjs-prev:hover,
+.paginationjs-page:hover,
+.paginationjs-next:hover {
+  background-color: blue;
+}
+.paginationjs-pages .active {
+  background-color: blue;
+}
+.paginationjs-pages .active a {
+  color: white;
+}
+.paginationjs-pages a {
+  color: black;
+}
+
+
+.active-tab{
+   color: blue;
+   border-bottom: 1px solid blue;
+}
+
+.active-footer{
+  display: block !important;
+}
+.footer-link{
+  display: none 
+}
+
+.tablink{
+  padding: 10px 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+.product-detail-right p{
+  font-size: 14px;
+  margin: 0;
+}

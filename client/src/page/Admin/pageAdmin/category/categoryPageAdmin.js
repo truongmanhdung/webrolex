@@ -31,7 +31,7 @@ const CategoryPageAdmin = {
                     <tr style="verticle-align: middle; vertical-align: middle;">
                         <td class="text-center">${index+1}</td>
                         <td class="text-center">${item.title}</td>
-                        <td class="text-justify" style="width: 200px">${item.videoURL}</td>
+                        <td class="text-justify" style="width: 200px!important; width: fit-content;">${item.videoURL}</td>
                         <td class="text-center">
                             <img width="100" src="${item.imageURL}" />
                         </td>
@@ -89,6 +89,13 @@ const CategoryPageAdmin = {
                     const deleteSuccess = await CategoryApi.delete(id)
                         if(deleteSuccess.status === 200){
                             reRender(CategoryPageAdmin, '#showBody')
+                            Toastify({
+                                text: deleteSuccess.data.message,
+                                className: "info",
+                                style: {
+                                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                                }
+                              }).showToast();
                         }
                 }
             })

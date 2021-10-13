@@ -1,9 +1,21 @@
 import CategoryApi from "../../apis/categoryApi";
 import convertToUrl from "../../common/convertToUrl";
+import { debounce } from "../../utils/debounce";
 
 const Header = {
   async render() {
+    const username = localStorage.getItem("username");
     const dataCategory = await CategoryApi.getAll();
+    const showUser = () => {
+      let html = null;
+      if(username === 'admin'){
+        html = '<li class="menu-item"><a href="/#/admin">Vào trang quản trị</a></li>'
+      }else{
+        html = `<li class="menu-item"><a href="/#/admin">Chào ${username}</a></li>
+        <li class="menu-item"><a href="/#/profile">Xem profile</a></li>`
+      }
+      return html;
+    }
     return `<div class="header container-fluid">
            <div
              class=" menu  pt-4 pb-2"
@@ -27,15 +39,16 @@ const Header = {
                               `<li key="${item._id}" ${localStorage.setItem(
                                 `${convertToUrl(item.title)}`,
                                 item._id
-                              )} } class="menu-item"><a href="/#/category/${convertToUrl(
+                              )}  class="menu-item"><a href="/#/category/${convertToUrl(
                                 item.title
                               )}">${item.title}</a></li></a></li>`
                           )
                           .join("")}
                        <li class="menu-item"><a href="">Giới thiệu</a></li>
                        <li class="menu-item"><a href="">Blog</a></li>
-                       <li class="menu-item"><a href="/#/login">Đăng nhập</a></li>
-                       <li class="menu-item"><a href="/#/register">Đăng ký</a></li>
+                       ${username ? showUser() : `<li class="menu-item"><a href="/#/login">Đăng nhập</a></li>
+                       <li class="menu-item"><a href="/#/register">Đăng ký</a></li>`}
+                       
                    </ul>
                  </div>
                  <label class="overlay1" for="showMenu">
@@ -135,6 +148,10 @@ const Header = {
       }
       
     })
+    var returnedFunction = debounce(function() {
+      console.log('dsadsadsadsa')
+    }, 250);
+
   },
 };
 export default Header;

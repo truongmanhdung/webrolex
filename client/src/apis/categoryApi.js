@@ -5,6 +5,10 @@ const CategoryApi = {
         const url = `categorys`
         return axiosClient.get(url)
     },
+    getListLimit(limit){
+        const url = `categorys?limit=${limit}`
+        return axiosClient.get(url)
+    },
     getID(id){
         const url = `/categorys/${id}`
         return axiosClient.get(url)

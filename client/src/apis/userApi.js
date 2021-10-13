@@ -8,6 +8,10 @@ const UserApi = {
     register(user){
         const url = `auth/register`
         return axiosClient.post(url, user)
+    },
+    getAll(){
+        const url = `user`
+        return axiosClient.get(url)
     }
 }
 export default UserApi;

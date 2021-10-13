@@ -65,7 +65,7 @@ const Register = {
 
   afterRender(){
     const btn_register = document.querySelector("#form-register");
-    btn_register.addEventListener("submit",(e)=> {
+    btn_register.addEventListener("submit", async (e)=> {
         e.preventDefault();
         const password = document.querySelector('#password').value
         const repeat_password = document.querySelector('#repeat-password').value
@@ -75,9 +75,37 @@ const Register = {
                 email: document.querySelector('#email').value,
                 password: password,
             }
-            const result = UserApi.register(user);
+            const result = await UserApi.register(user);
+            if(result.status === 200) {
+                localStorage.setItem('username', result.data.username);
+                Toastify({
+                    text: result.data.message,
+                    className: "info",
+                    style: {
+                      background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                }).showToast();
+                reRender(HomePage, '#root')
+                window.location.hash = '/'
+            }else{
+                Toastify({
+                    text: 'register not success',
+                    className: "danger",
+                    style: {
+                        background: "linear-gradient(to right, #ff0011, #bb321f)",
+                    }
+                }).showToast();
+                reRender(Register, '#root')
+                window.location.hash = '/register'
+            };
         }else{
-            alert("password and repeat password do not match")
+            Toastify({
+                text: 'password and repeat password do not match',
+                className: "danger",
+                style: {
+                  background: "linear-gradient(to right, #00b09b, #96c93d)",
+                }
+            }).showToast();
         }
         
 

@@ -2,11 +2,14 @@ POST http://localhost:8866/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "email": "dungtmph12934@fpt.edu.vn",
+    "username": "dungtmph12934",
+    "email": "truongmanhdung04@gmail.com",
     "password": "123"
 }
 
+###
+
+GET https://localhost:8866/api/user
 
 ###
 
@@ -22,23 +25,23 @@ Content-Type: application/json
 ###
 GET http://localhost:8866/api/categorys
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzQwNDQ4NDcsImV4cCI6MTYzNDA0NDg0OH0.sRFVSKCq06pe4nCgLPs-L15ZncAmWKXylgjKBXl0dMQ
 
 
 ###
 POST http://localhost:8866/api/categorys
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzQwNDQ4NDcsImV4cCI6MTYzNDA0NDg0OH0.sRFVSKCq06pe4nCgLPs-L15ZncAmWKXylgjKBXl0dMQ
 
 {
-   "title": "Đồng hồ Nam",
+   "title": "Đồng hồ thịnh hành",
     "imageURL": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0012_m116519ln-0038-cosmograph-daytona.jpg?imwidth=420",
     "videoURL": "https://rolex.com/dam/watches/hubs/all-watches/videos/hub-collection-watches-cover.mp4"
 }
 
 
 ###
-PUT http://localhost:8866/api/categorys/615865ee71363244c9307c67
+PUT http://localhost:8866/api/categorys/615b172c43ca235d17bf1eca
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
 
@@ -50,12 +53,21 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhO
 
 
 ###
-
-DELETE  http://localhost:8866/api/categorys/615491877ec6d24dfc464cf6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+DELETE  http://localhost:8866/api/categorys/615ab0248256769ab074cc8c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzM1MDY4NzJ9.qSHTBYFszFUU3PXdLDuZWnwEUjT_Ow1aeuX5kvM1mSw
 
 ###
-GET http://localhost:8866/api/products
+GET http://localhost:8866/api/products/615e54f19f4d381abb8fafed
+
+###
+GET http://localhost:8866/api/products?page=1
+
+###
+GET http://localhost:8866/api/products?search=rolex
+
+###
+GET http://localhost:8866/api/products?expand=category
+
 
 ###
 POST http://localhost:8866/api/products
@@ -63,11 +75,20 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
 
 {
-    "title": "Đồng hồ Nữ",
+    "title": "Đồng hồ sâsaffd",
     "description": "Đồng hồ thời đỉnh cao",
-    "price": 15425522,
-    "imageURL": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0003_m126200-0020-datejust.jpg?imwidth=420",
-    "category": "615ab0248256769ab074cc8c"
+    "price": 154522,
+    "imageURL": ["https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0012_m116519ln-0038-cosmograph-daytona.jpg?imwidth=420"],
+    "category": "615d56cdad09e12a2dfc1c9b",
+    "information": {
+        "kichthuoc": "123",
+        "doday": "1mm",
+        "loaimay": "Đồng hồ rolex",
+        "kichcoday": "kichcoday",
+        "chongcoday": "ok",
+        "matkinh": "ok",
+        "chatlieuday": "oke"
+    }
 }
 
 
@@ -90,3 +111,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhO
 
 DELETE http://localhost:8866/api/products/615514826ba3901696aa7794
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+
+
+###
+GET http://localhost:8866/api/accessory
+
+###
+POST http://localhost:8866/api/accessory
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzQwMjE4OTV9.JTIpDcrZq9iS7NuMUWgPAMxhIu00qzkf3Js9RLfhYbQ
+
+{
+    "title": "Đồng hồ Nữ",
+    "imageURL": "Đồng hồ thời thượng",
+    "price": 15425522
+}

@@ -1,3 +1,5 @@
+import convertToUrl from "../../../common/convertToUrl"
+
 const Product = {
     
     render(item) {
@@ -11,14 +13,13 @@ const Product = {
                         id="1"
                         class="input_focus"
                     />
-                   
                     <img
-                        src="${item.imageURL}"
+                        src="${item.imageURL[0]}"
                         alt=""
                     />
                     <a href="" class="title px-2"><span>${item.title}</span></a>
                     <a href="" class="name d-block px-2"><span>${item.description}</span></a>
-                    <a href="product/${item._id}" class="view view1"><span>XEM SẢN PHẨM</span></a>
+                    <a ${localStorage.setItem(`product${convertToUrl(item.title)}`,item._id)} href="/#/product/${convertToUrl(item.title)}" class="view view1"><span>XEM SẢN PHẨM</span></a>
                 </div>
           </div>`
         )
