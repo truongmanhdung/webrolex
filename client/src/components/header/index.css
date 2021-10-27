@@ -9,7 +9,7 @@ p, span{
   padding: 0;
 }
 .navbar_left {
-  min-width: 250px;
+  min-width: 185px;
 }
 .header {
   position: relative;
@@ -35,7 +35,7 @@ p, span{
   z-index: 5;
   right: 0;
   height: 101vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .menu {
   position: fixed;
@@ -66,7 +66,7 @@ p, span{
   top: 0;
   left: 0;
   right: 0;
-  z-index: 40;
+  z-index: 40000000;
   height: 400px;
   background-color: #f8f8f8;
   transform: translateY(-100%);
@@ -304,4 +304,23 @@ p, span{
 }
 .menu-margin{
   margin-left: 2rem !important;
+}
+
+#showSearchProduct{
+  text-align: center;
+}
+.product-search-list{
+  width: 600px;
+  margin: 10px auto;
+  overflow: auto;
+}
+.product-search-img{
+  width: 60px;
+}
+.product-search-item{
+  transition: background-color linear 0.35s;
+  padding: 5px 20px;
+}
+.product-search-item:hover{
+  background-color: antiquewhite;
 }

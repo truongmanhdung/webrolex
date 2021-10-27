@@ -30,8 +30,6 @@ const login = async (req, res) => {
     if (username === "admin") {
       const accessToken = jwt.sign(
         { userId: user._id },
-        "Stack",
-        { expiresIn: "1h" },
         process.env.ACCESS_TOKEN_SECRET
       );
       return res.json({
@@ -103,12 +101,26 @@ const register = async (req, res) => {
 };
 
 const getAll = async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json({ success: true, users: users });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
+  const username = req.query.username;
+  if(username){
+    try {
+      const user = await User.findOne({ username: username});
+      res.json({ success: true, user: user });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: "Internal server error" });
+    }
+  }else{
+    try {
+      const users = await User.find();
+      res.json({ success: true, users: users });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: "Internal server error" });
+    }
   }
+  
 };
-module.exports = { login, register, getAll };
+
+
+module.exports = { login, register, getAll};

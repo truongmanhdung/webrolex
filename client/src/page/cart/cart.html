@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <div class="container">
+      <div class="card">
+        <table class="table table-hover shopping-cart-wrap m-0">
+          <thead class="text-muted">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col" width="120">Quantity</th>
+              <th scope="col" width="120">Price</th>
+              <th scope="col" width="200" class="text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="order-view">
+            <tr>
+              <td>
+                <figure class="media m-0">
+                  <div class="img-wrap">
+                    <img
+                      src="http://bootstrap-ecommerce.com/main/images/items/2.jpg"
+                      class="img-thumbnail img-sm"
+                    />
+                  </div>
+                  <figcaption class="media-body">
+                    <h6 class="title text-truncate">Product name goes here</h6>
+                    <dl class="param param-inline small">
+                      <dt>Size:</dt>
+                      <dd>XXL</dd>
+                    </dl>
+                    <dl class="param param-inline small">
+                      <dt>Color:</dt>
+                      <dd>Orange color</dd>
+                    </dl>
+                  </figcaption>
+                </figure>
+              </td>
+              <td>
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </td>
+              <td>
+                <div class="price-wrap">
+                  <var class="price">USD 145</var>
+                  <small class="text-muted">(USD5 each)</small>
+                </div>
+                <!-- price-wrap .// -->
+              </td>
+              <td class="text-right">
+                <a
+                  title=""
+                  href=""
+                  class="btn btn-outline-success"
+                  data-toggle="tooltip"
+                  data-original-title="Save to Wishlist"
+                >
+                  <i class="fa fa-heart"></i
+                ></a>
+                <a href="" class="btn btn-outline-danger"> × Remove</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    
+    <br /><br />
+  </body>
+</html>

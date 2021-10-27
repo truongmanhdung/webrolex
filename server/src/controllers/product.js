@@ -6,8 +6,9 @@ const getAllProduct = async (req, res, next) => {
     let contact = req.query.contact;
     let sort = req.query.sort;
     let search = req.query.search;
-    let skipClient = req.query.skip;
-    let limitClient = req.query.limit
+    let skipClient = Number(req.query.skip);
+    let limitClient = Number(req.query.limit);
+    const idCategory = req.query.category;
     if(contact) {
         try {
             const products = await Product.find().populate(contact);
@@ -16,7 +17,26 @@ const getAllProduct = async (req, res, next) => {
             console.log(error);
             res.status(500).json({ success: false, message: "Internal server error" });
         }
-    }else if(page){
+    }else if(idCategory && !sort){
+        try {
+            const products = await Product.find({category: idCategory})
+            res.json({success: true, products: products});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    }
+    else if(idCategory && page){
+        const skip = (page - 1) * page_size;
+        try {
+            const products = await Product.find({category: idCategory}).skip(skip).limit(page_size);
+            res.json({success: true, products: products});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    }
+    else if(page && !sort){
         const skip = (page - 1) * page_size;
         try {
             const products = await Product.find().skip(skip).limit(page_size)
@@ -25,7 +45,38 @@ const getAllProduct = async (req, res, next) => {
             console.log(error);
             res.status(500).json({ success: false, message: "Internal server error" });
         }
-    }else if(sort){
+    }
+    else if(page && sort){
+        const skip = (page - 1) * page_size;
+        try {
+            const products = await Product.find().skip(skip).limit(page_size).sort({price: sort})
+            res.json({success: true, products: products, page: page, limit: page_size});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    }
+    else if(sort && !idCategory){
+        try {
+            
+            const products = await Product.find().populate("category").sort({price: sort})
+            res.json({success: true, products: products});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    }
+    else if(sort && idCategory){
+        try {
+            const products = await Product.find({category: idCategory}).sort({price: sort})
+            debugger;
+            res.json({success: true, products: products});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    }
+    else if(sort){
         try {
             const products = await Product.find().populate("category").sort({price: sort}).limit(page_size);
             res.json({success: true, products: products});
@@ -35,17 +86,20 @@ const getAllProduct = async (req, res, next) => {
         }
     }else if(search){
         try {
-            const products = await Product.find({title: / search /}).populate("category")
-            res.json({success: true, products: products});
+            const products = await Product.find( { '$text': {'$search' : search } } )
+            console.log(products);
+            res.json({success: true, products: products})
+            
         } catch (error) {
             console.log(error);
             res.status(500).json({ success: false, message: "Internal server error" });
         }
        
-    }else if(page && sort) {
-        const skip = (page - 1) * page_size;
+    }
+    else if(limitClient && !skipClient){
         try {
-            const products = await Product.find().skip(skip).limit(page_size).sort(sort)
+            const products = await Product.find({}).limit(8)
+            console.log(products.length)
             res.json({success: true, products: products, page: page, limit: page_size});
         } catch (error) {
             console.log(error);
@@ -54,7 +108,8 @@ const getAllProduct = async (req, res, next) => {
     }
     else if(skipClient && limitClient){
         try {
-            const products = await Product.find().skip(skipClient).limit(limitClient)
+            const products = await Product.find({}).skip(8).limit(8)
+            console.log(products.length)
             res.json({success: true, products: products, page: page, limit: page_size});
         } catch (error) {
             console.log(error);
@@ -75,14 +130,13 @@ const getAllProduct = async (req, res, next) => {
 const getOneProduct = async (req, res) => {
     try {
         const id = req.params.id;
-        const product = await Product.findOne({_id: req.params.id})
+        const product = await Product.findOne({_id: id})
         res.json({success: true, product: product});
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: "Internal server error" });
     }
 }
-
 
 
 const postProduct = async (req, res) => {

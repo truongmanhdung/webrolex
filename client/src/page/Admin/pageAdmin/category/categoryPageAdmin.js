@@ -88,14 +88,14 @@ const CategoryPageAdmin = {
                 if(window.confirm("Bạn có muốn xóa sản phẩm này không")){
                     const deleteSuccess = await CategoryApi.delete(id)
                         if(deleteSuccess.status === 200){
-                            reRender(CategoryPageAdmin, '#showBody')
+                            reRender(CategoryPageAdmin, '#root')
                             Toastify({
                                 text: deleteSuccess.data.message,
                                 className: "info",
                                 style: {
                                   background: "linear-gradient(to right, #00b09b, #96c93d)",
                                 }
-                              }).showToast();
+                            }).showToast();
                         }
                 }
             })

@@ -5,6 +5,22 @@ const ProductApi = {
         const url = `products`
         return axiosClient.get(url)
     },
+    getCategory(id){
+        const url = `products?category=${id}`
+        return axiosClient.get(url)
+    },
+    getProductSortPage(sort, page){
+        const url = `products?sort=${sort}&page=${page}`
+        return axiosClient.get(url)
+    },
+    getCategoryPages(id, page){
+        const url = `products?category=${id}&page=${page}`
+        return axiosClient.get(url)
+    },
+    getCategorySort(id, sort){
+        const url = `products?category=${id}&sort=${sort}`
+        return axiosClient.get(url)
+    },
     getByCategory(){
         const url = `products?_expand=category`
         return axiosClient.get(url)
@@ -35,6 +51,10 @@ const ProductApi = {
     },
     getSkip(skip, limit){
         const url = `/products?skip=${skip}&&limit=${limit}`
+        return axiosClient.get(url)
+    },
+    getSearch(search){
+        const url = `/products?search=${search}`
         return axiosClient.get(url)
     }
    

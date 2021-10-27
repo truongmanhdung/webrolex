@@ -5,6 +5,8 @@ import navbarLeft from "../../components/navbarLeft";
 import navbarTop from "../../components/navbarTop";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify-es"
+import formatprice from "../../../../common/formatprice";
+import { getRandomInt } from "../../../../common/getRanDom";
 const ProductPageAdmin = {
   async render() {
     const listProducts = await ProductApi.getByCategory();
@@ -39,10 +41,10 @@ const ProductPageAdmin = {
                           item.description
                         }</td>
                         <td class="text-center">
-                            <img width="100" src="${item.imageURL[0]}" />
+                            <img width="100" src="${item.imageURL[getRandomInt(0, item.imageURL.length)]}" />
                         </td>
-                        <td class="text-center">${item.price}</td>
-                        <td class="text-center">${item.title}</td>
+                        <td class="text-center">${formatprice(item.price)}</td>
+                        <td class="text-center">${item.category.title}</td>
                         <td class="text-center">${item.createdAt}</td>
                         
                         <td class="text-center"> 
@@ -107,7 +109,7 @@ const ProductPageAdmin = {
                 background: "linear-gradient(to right, #00b09b, #96c93d)",
               }
             }).showToast();
-            reRender(ProductPageAdmin, "#showBody");
+            reRender(ProductPageAdmin, "#root");
           }
         }
       });

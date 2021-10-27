@@ -9,7 +9,6 @@ export const setCartItems = (cart) => {
 
 export const addToCart = (newProduct) => {
     let cartItem = getCartItems();
-
     const existProduct = cartItem.find(product => product.id === newProduct.id);
     if(existProduct){
         existProduct.quantity += newProduct.quantity
@@ -18,4 +17,10 @@ export const addToCart = (newProduct) => {
     }
 
     setCartItems(cartItem);
+}
+
+export const removeCartItems = (idCartItem) => {
+    let cartItem = getCartItems();
+    const existProduct = cartItem.find(product => product.id !== idCartItem);
+    setCartItems([existProduct])
 }

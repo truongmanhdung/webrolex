@@ -72,10 +72,10 @@ GET http://localhost:8866/api/products?expand=category
 ###
 POST http://localhost:8866/api/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzMzMjg0NDB9.fOatV6fkkl9QVdhGnfqWXepJxZUijSx9roN8YGtClSk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTVhOWQzODgyNTY3NjlhYjA3NGNiYTAiLCJpYXQiOjE2MzQxODA5Njd9.-biWdU4IArgFpyvDCjjnQD8iYzKE8HVYnnIFBhQlSjo
 
 {
-    "title": "Đồng hồ sâsaffd",
+    "title": "Đồng hồ dep moi",
     "description": "Đồng hồ thời đỉnh cao",
     "price": 154522,
     "imageURL": ["https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0012_m116519ln-0038-cosmograph-daytona.jpg?imwidth=420"],

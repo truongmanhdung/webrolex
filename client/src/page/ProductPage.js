@@ -29,13 +29,11 @@ const ProductPage = {
                             <h3>${dataProduct.length} sản phẩm</h3>
                         </div>
                         <div class="mb-3 mt-3">
-                        <form>
-                            <select class="form-select" name="select_search" onchange="this.form.submit()" aria-label="Default select example">
-                            <option selected>Sắp xếp phù hợp nhất</option>
-                            <option value="tangdan">Giá tăng dần</option>
-                            <option value="giamdan">Giá giảm dần</option>
-                            </select>
-                        </form>
+                        <select name="" id="submitform" class="form-control" style="width: 200px">
+                            <option >Tất cả</option>
+                            <option value="1">Giá tăng dần</option>
+                            <option value="-1">Giá giảm dần</option>
+                        </select>
                         </div>
                     </div>
                     <div class="row product-list">
@@ -51,12 +49,14 @@ const ProductPage = {
 
   afterRender() {
     Header.afterRender();
-    const listPagination = [];
+    $("html, body").animate({ scrollTop: 0 }, "slow");
     ProductApi.getAll().then((response) => {
+      const listPagination = [];
       const data = response.data.products;
       for (let i = 0; i < data.length; i++) {
         listPagination.push(i);
       }
+
       $("#pagination").pagination({
         dataSource: listPagination,
         pageSize: 8,
@@ -70,8 +70,25 @@ const ProductPage = {
           document.querySelector(".product-list").innerHTML = dataProduct
             .map((product) => Product.render(product))
             .join("");
+          $("html, body").animate({ scrollTop: 0 }, "slow");
         },
       });
+    });
+
+    const submitform = document.querySelector("#submitform");
+    submitform.addEventListener("change", async (e) => {
+      e.preventDefault();
+      const page = document
+      .querySelector(".active")
+      .getAttribute("data-num");
+      const sort = submitform.value;
+      const productSort = await (
+        await ProductApi.getProductSortPage(sort, page)
+      ).data.products;
+      document.querySelector(".product-list").innerHTML = productSort
+        .map((product) => Product.render(product))
+        .join("");
+      $("html, body").animate({ scrollTop: 0 }, "slow");
     });
   },
 };

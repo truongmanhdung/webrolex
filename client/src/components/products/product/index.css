@@ -65,6 +65,8 @@
 
 .title span {
   color: #c8c8c8;
+  text-transform: uppercase;
+  margin: 10px 0 !important;
 }
 .product-item {
   transition: transform 0.4s linear;

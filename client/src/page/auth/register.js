@@ -1,4 +1,6 @@
 import UserApi from "../../apis/userApi";
+import { reRender } from "../../utils/rerender";
+import HomePage from "../HomePage";
 
 const Register = {
   render() {

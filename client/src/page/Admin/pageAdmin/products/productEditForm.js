@@ -6,6 +6,7 @@ import {
   ref,
   uploadBytesResumable,
   getDownloadURL,
+  uploadBytes
 } from "firebase/storage";
 import { reRender } from "../../../../utils/rerender";
 import CategoryApi from "../../../../apis/categoryApi";

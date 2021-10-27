@@ -82,7 +82,7 @@ const CategoryAddForm = {
                 imageURL: downloadURL,
                 videoURL: document.querySelector("#categoryUrlVideo").value
               }
-              const data = await CategoryApi.put(id,category);
+              const data = await CategoryApi.post(category);
               if(data.status === 200){
                 reRender(CategoryPageAdmin, '#showBody')
                 window.location.hash = '/admincategory'

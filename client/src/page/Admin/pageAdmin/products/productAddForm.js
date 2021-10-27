@@ -129,7 +129,7 @@ const ProductAddForm = {
       };
       const success =  await ProductApi.post(product);
       if(success.status === 200) {
-        reRender(ProductPageAdmin, "#showBody");
+        reRender(ProductPageAdmin, "#root");
         window.location.hash = "/adminproduct";
         Toastify({
           text: success.data.message,

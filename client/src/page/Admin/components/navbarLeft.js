@@ -17,7 +17,7 @@ const navbarLeft = {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/#/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -43,6 +43,8 @@ const navbarLeft = {
                         <a class="collapse-item" href="/#/adminuser">User</a>
                         <a class="collapse-item" href="/#/admincategory">Category</a>
                         <a class="collapse-item" href="/#/adminproduct">Product</a>
+                        <a class="collapse-item" href="/#/adminorder">Order</a>
+                        <a class="collapse-item" href="/#/admincomment">Comment</a>
                     </div>
                 </div>
             </li>

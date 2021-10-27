@@ -12,6 +12,10 @@ const UserApi = {
     getAll(){
         const url = `user`
         return axiosClient.get(url)
+    },
+    getUserName(username){
+        const url = `user?username=${username}`
+        return axiosClient.get(url)
     }
 }
 export default UserApi;

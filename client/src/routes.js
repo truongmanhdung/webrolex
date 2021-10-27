@@ -3,16 +3,22 @@ import ProductDetail from "./components/products/productDetail";
 import CategoryAddForm from "./page/Admin/pageAdmin/category/categoryAddForm";
 import CategoryEditForm from "./page/Admin/pageAdmin/category/categoryEditForm";
 import CategoryPageAdmin from "./page/Admin/pageAdmin/category/categoryPageAdmin";
+import CommentPageAdmin from "./page/Admin/pageAdmin/comment/commentPageAdmin";
 import HomePageAdmin from "./page/Admin/pageAdmin/homePageAdmin";
+import OrderDetailPageAdmin from "./page/Admin/pageAdmin/order/orderDetailAdmin";
+import OrderPageAdmin from "./page/Admin/pageAdmin/order/orderPageAdmin";
 import ProductAddForm from "./page/Admin/pageAdmin/products/productAddForm";
 import ProductEditForm from "./page/Admin/pageAdmin/products/productEditForm";
 import ProductPageAdmin from "./page/Admin/pageAdmin/products/productPageAdmin";
 import UserPageAdmin from "./page/Admin/pageAdmin/uses/userPageAdmin";
 import Login from "./page/auth/login";
 import Register from "./page/auth/register";
+import CartPage from "./page/cart/CartPage";
 import CategoryPage from "./page/CategoryPage";
 import HomePage from "./page/HomePage";
+import Pay from "./page/pay/pay";
 import ProductPage from "./page/ProductPage";
+import ProfilePage from "./page/profile";
 const router = new Navigo("/", { hash: true, linksSelector: "a" });
 
 const display = async (page, afterRender) => {
@@ -35,10 +41,16 @@ const routes = () => {
             display(ProductPage.render(), ProductPage.afterRender)
         })
         .on("/admin", () => {
-            display(HomePageAdmin.render())
+            display(HomePageAdmin.render(), HomePageAdmin.afterRender)
         })
         .on("/adminuser", () => {
             display(UserPageAdmin.render())
+        })
+        .on("/cart", () => {
+            display(CartPage.render(), CartPage.afterRender)
+        })
+        .on("/profile", () => {
+            display(ProfilePage.render(), ProfilePage.afterRender)
         })
         .on("/admincategory", () => {
             display(CategoryPageAdmin.render(), CategoryPageAdmin.afterRender)
@@ -63,6 +75,18 @@ const routes = () => {
         })
         .on("/register", () => {
             display(Register.render(), Register.afterRender)
+        })
+        .on("/adminorder",() => {
+            display(OrderPageAdmin.render(), OrderPageAdmin.afterRender)
+        })
+        .on("/adminorder/:id", ({data}) => {
+            display(OrderDetailPageAdmin.render(data), OrderDetailPageAdmin.afterRender)
+        })
+        .on('thanhtoan/:id', ({data}) => {
+            display(Pay.render(data), Pay.afterRender)
+        })
+        .on('/admincomment', () => {
+            display(CommentPageAdmin.render(), CommentPageAdmin.afterRender)
         })
         .notFound(() => {
             console.log("Not Found Page");

@@ -1,7 +1,9 @@
-import AccessoryApi from "../../../apis/accessoryApi";
-import data from "../../../apis/datafake";
 import ProductApi from "../../../apis/productApi";
-import convertToUrl from "../../../common/convertToUrl";
+import formatprice from "../../../common/formatprice";
+import CartPage from "../../../page/cart/CartPage";
+import { addToCart } from "../../../utils/addToCart";
+import { reRender } from "../../../utils/rerender";
+import Comment from "../../comment/comment";
 import Footer from "../../footer";
 import Header from "../../header";
 
@@ -12,7 +14,6 @@ const ProductDetail = {
     const listDataImage = product.imageURL;
     const imageActive = listDataImage[0];
     listDataImage.shift();
-    const accessory = await AccessoryApi.getAll();
     return `
             ${await Header.render()}
             <div class="backgroud-image">
@@ -40,7 +41,7 @@ const ProductDetail = {
                     alt=""
                   />
                 </div>`
-                )}
+                ).join('')}
               </div>
               <div class="content-wrap col-10">
                 <div class="content-img active-img">
@@ -59,7 +60,7 @@ const ProductDetail = {
                     alt=""
                   />
                 </div>`
-                )}
+                ).join("")}
               </div>
             </div>
           </div>
@@ -70,9 +71,8 @@ const ProductDetail = {
                     <h6>${product.description}</h6>
                     <h5>${product.title}</h5>
                   </div>
-                  <div class="d-flex justify-content-between px-2">
-                    <p style="font-size: 16px">${product.price} ₫</p>
-                    <p><span class="text-decoration-line-through" style="font-size: 14px">2.299.000</span> ₫</p>
+                  <div class="d-flex justify-content-between px-5">
+                    <p style="font-size: 16px; font-weight: bold; color: black">${formatprice(product.price)}</p>
                     <p style="font-size: 12px; color: yellow">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -107,12 +107,12 @@ const ProductDetail = {
                   <div class="add-card d-flex align-items-center justify-content-between">
                       <div class="d-flex">
                         <button type="button" class="btn btn-danger btn-add1"><i class="fas fa-minus"></i></button>
-                        <input class="form-control mx-2" style="width: 50px" type="number" value="1" id="number" min="1">
-                        <button type="button" class="btn btn-success btn-add2"><i class="fas fa-plus"></i></button>
+                        <input class="form-control quantity mx-2" style="width: 50px" type="number" value="1" id="number" min="1">
+                        <button type="button" class="btn btn-success btn-add2 "><i class="fas fa-plus"></i></button>
                       </div>
-                      <a href="/#/product" class="btn btn-primary"><span>THÊM GIỎ HÀNG</span></a>
+                      <a data-id="${product._id}" href="/#/product" class="btn-add-cart muangay addtocart"><span>THÊM GIỎ HÀNG</span></a>
                   </div>
-                  <a href="/#/product" class="muangay" ><span>MUA NGAY</span></a>
+                  <a href="/#/cart" class="muangay addngay" ><span>MUA NGAY</span></a>
                 </div>
               </div>
             </div>
@@ -215,13 +215,16 @@ const ProductDetail = {
             <p>Tên ngân hàng:</p>
             <p>BIDV Chi nhánh: BIDV chi nhánh Ba Vì, Hà Nội</p>
         </div>
+        ${await Comment.render(id,product._id)}
     </div>
     
     ${Footer.render()}
     `;
   },
   afterRender() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
     Header.afterRender();
+    Comment.afterRender()
     const itemsImgs = document.querySelectorAll(".item-image");
     const contentImgs = document.querySelectorAll(".content-img");
     itemsImgs.forEach((item, index) => {
@@ -266,6 +269,51 @@ const ProductDetail = {
     })
     document.querySelector('.btn-add2').addEventListener("click", () => {
       increaseValue()
+    })
+
+    const addtocart = document.querySelector('.addtocart');
+    const quantity = document.querySelector('.quantity');
+    const idProduct = addtocart.getAttribute('data-id');
+    const addngay = document.querySelector('.addngay');
+    addtocart.addEventListener("click", async (e) =>{
+      e.preventDefault();
+      const product = await (await ProductApi.getID(idProduct)).data.product;
+      const cart = {
+        id: idProduct,
+        title: product.title,
+        price: product.price,
+        imageURL: product.imageURL[0],
+        quantity: Number(quantity.value),
+      }
+      addToCart(cart);
+      Toastify({  
+        text: 'Đã thêm vào giỏ hàng thành công',
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
+    })
+    addngay.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const product = await (await ProductApi.getID(idProduct)).data.product;
+      const cart = {
+        id: idProduct,
+        title: product.title,
+        price: product.price,
+        imageURL: product.imageURL[0],
+        quantity: Number(quantity.value),
+      }
+      addToCart(cart);
+      Toastify({
+        text: 'Đã thêm vào giỏ hàng thành công',
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
+      reRender(CartPage, '#root')
+      window.location.hash = '/cart'
     })
   },
 };

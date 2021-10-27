@@ -90,3 +90,22 @@ h5 {
   font-size: 14px;
   margin: 0;
 }
+
+.muangay{
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px auto;
+    color: black;
+    border: 1px solid black;
+    transition: background-color 0.5s linear;
+}
+
+.muangay:hover{
+  background-color: black;
+  color: white;
+}
+.btn-add-cart{
+  margin: 0;
+  padding: 10px 20px;
+}

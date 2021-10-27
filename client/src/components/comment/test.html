@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <style>
+      .color-star i{
+          color: yellow;
+          font-size: 14px;
+      }
+      .btn-comment{
+          display: block;
+          height: 60px;
+          width: 200px;
+          border: 1px solid rgba(0,0,0,0.4);
+          transition: all 0.35s linear;
+          font-weight: bold;
+          text-transform: uppercase;
+      }
+      .btn-comment:hover{
+          color: white;
+          background-color: black;
+      }
+      .avatar{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+      }
+      .account-user p{
+          font-size: 14px
+      }
+      .comment-item{
+          box-shadow: 1px 1px 4px 5px rgba(0,0,0,0.1);
+      }
+      .commnet-content{
+          padding: 20px;
+      }
+      .comment-content{
+          height: 120px;
+      }
+  </style>
+  <body>
+    
+    <div class="comment container">
+        <div class="mb-5">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="comment-header-left">
+                    <h3>REVIEWS CỦA KHÁCH HÀNG</h3>
+                    <p class="m-0 color-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>Dựa trên 41 reviews</span>
+                    </p>
+                </div>
+                <div class="comment-header-right">
+                    <button class="btn-comment">Xem tất cả</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 comment-item">
+                <div class="commnet-content">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="color-star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="time">
+                            <p class="m-0">Apr 27th, 2020</p>
+                        </div>
+                    </div>
+                    <h4 class="text-uppercase py-4 m-0">Restock</h4>
+                    <div class="comment-content">
+                        <p class="comment-text m-0 text-justify">
+                            Khi nào shop có hàng sản phẩm này á?
+                        </p>
+                    </div>
+                    <div class="account d-flex align-items-center">
+                        <div class="avatar">
+                            <img class="w-100 h-100 rounded-circle" style="object-fit:cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+                        </div>
+                        <div class="account-user ms-4">
+                            <h6 class="m-0">Hoàng Nam</h6>
+                            <p class="m-0">Đã xác thực</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+   
+  </body>
+</html>

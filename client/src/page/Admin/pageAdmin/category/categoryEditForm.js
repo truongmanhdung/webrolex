@@ -88,7 +88,7 @@ const CategoryEditForm = {
                 }
                 const data = await CategoryApi.put(id,category);
                 if(data.status === 200){
-                  reRender(CategoryPageAdmin, '#showBody')
+                  reRender(CategoryPageAdmin, '#root')
                   window.location.hash = '/admincategory'
                   Toastify({
                     text: data.data.message,

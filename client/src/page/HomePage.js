@@ -17,22 +17,29 @@ const HomePage = {
             <div class="overlay2">
      
             </div>
-            <div class="position_video">
+            <div class="position_video" >
                 <video autoplay muted="true" id="player-vjs_html5_api" class="vjs-tech" loop preload="auto">
                     <source src="https://content.rolex.com/dam/new-watches-2020/new-datejust/videos/cover/new-datejust-cover-video.mp4" type="video/mp4" />
                 </video>
                 
-                <div class="home-positions">
-                    <h3 class="text-center text-white text-uppercase">Datejust</h3>
-                    <p class="text-center text-white text-uppercase">Đồng hồ biểu tượng của phong cách cổ điển</p>
+                <div class="home-positions" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1000">
+                
+                    <h3 class="text-center text-white text-uppercase">Đồng hồ Rolex</h3>
+                    <h4 class="text-center my-4 text-white text-uppercase">Đỉnh cao của sự lịch lãm và sang trọng</h4>
+                    <p class="text-center mb-5 text-white ">Hãy đến với chúng tôi, chúng tôi sẽ mang đến cho bạn những gì tốt đẹp nhất!</p>
                     <a href="/#/product" class="d-block mx-auto view2"><span>XEM BỘ SƯU TẬP</span></a>
+                    
                 </div>
             </div>
                 <div class="container">
                     <h3 class="my-4" style="font-size: 26px; font-weight: bold">KHÁM PHÁ BỘ SƯU TẬP ĐỒNG HỒ UY TÍN CỦA ROLEX VỚI ĐỘ CHÍNH XÁC VƯỢT TRỘI.</h3>
                     <p class="my-4" >Rolex cung cấp đa dạng mẫu đồng hồ Oyster Perpetual và Cellini phù hợp với mọi cổ tay. Khám phá hàng loạt mẫu đồng hồ Rolex để tìm ra sự kết hợp hoàn hảo giữa phong cách và tính năng ưu việt.</p>
                     <div class="row">
-                    <div class="row" ">
+                    <div class="row" data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000">
                         ${categories
                           .map(
                             (item) =>
@@ -52,7 +59,9 @@ const HomePage = {
                     <div>
                         <h5 class="my-4">Đồng hồ Cổ điển</h5>
                         <div >
-                            <div class="row">
+                            <div class="row" data-aos="fade-up"
+                            data-aos-easing="linear"
+                            data-aos-duration="2000">
                                 ${product_list_page
                                 .map((item) => Product.render(item))
                                 .join("")}
@@ -62,7 +71,9 @@ const HomePage = {
                     <div>
                         <h5 class="my-4">Đồng hồ mới nhất</h5>
                         <div >
-                            <div class="row">
+                            <div class="row" data-aos="fade-right"
+                            data-aos-easing="linear"
+                            data-aos-duration="1000">
                                 ${product_list_page2
                                 .map((item) => Product.render(item))
                                 .join("")}
@@ -75,6 +86,8 @@ const HomePage = {
   },
   afterRender(){
       Header.afterRender()
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      AOS.init()
   }
 };
 

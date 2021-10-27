@@ -1,0 +1,21 @@
+.header_top_infor {
+    height: 300px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 32.01%, #fff 61.46%), url(./admin/light-bootstrap-dashboard-master/examples/images/background-3Ef.png) no-repeat;
+    background-position: right;
+    box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 10%);
+}
+
+.information {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 80px;
+    box-shadow: 1px 1px 6px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hover_form_infor {
+    display: none;
+}
+
+.user_name:checked~.hover_form_infor {
+    display: block;
+}

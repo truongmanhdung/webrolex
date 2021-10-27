@@ -6,7 +6,7 @@ const Footer = {
             <div class="footer-top">
             <div class="footer-img">
               <img
-                src="https://donghothuysy.vn/upload_images/images/dong-ho-rolex-submariner-1.jpg"
+                src="https://content.rolex.com/dam/new-watches-2021/family-pages/explorer/family-page-explorer-beauty_explorer-ii_2bis_a2_v2f.jpg?imwidth=1920"
                 alt=""
               />
             </div>
