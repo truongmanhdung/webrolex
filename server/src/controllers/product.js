@@ -86,8 +86,8 @@ const getAllProduct = async (req, res, next) => {
         }
     }else if(search){
         try {
+            const {search} = req.query
             const products = await Product.find( { '$text': {'$search' : search } } )
-            console.log(products);
             res.json({success: true, products: products})
             
         } catch (error) {

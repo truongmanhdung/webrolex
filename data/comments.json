@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6174c239e18f7eb132c947ef"
+  },
+  "userId": {
+    "$oid": "6174c1d1e18f7eb132c947d3"
+  },
+  "productId": {
+    "$oid": "616515464acf97340e8b3c1c"
+  },
+  "comment": "Sản phẩm này đẹp quá",
+  "status": true,
+  "createdAt": {
+    "$date": "2021-10-24T02:02:25.162Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61755d1f77fc2823119d80d1"
+  },
+  "userId": {
+    "$oid": "6174c1d1e18f7eb132c947d3"
+  },
+  "productId": {
+    "$oid": "616a480838d6cddc99eb621c"
+  },
+  "comment": "Sản phẩm này đẹp quá",
+  "status": true,
+  "createdAt": {
+    "$date": "2021-10-24T13:13:22.402Z"
+  },
+  "__v": 0
+}]

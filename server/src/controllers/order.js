@@ -1260,6 +1260,7 @@ const postOrder = async (req, res) => {
 const updateStatus = async (req, res) => {
   const { status } =
     req.body;
+    
   const id = req.params.id;
   let order = {
     status

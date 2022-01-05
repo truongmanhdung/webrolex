@@ -1,0 +1,358 @@
+[{
+  "_id": {
+    "$oid": "616515464acf97340e8b3c1c"
+  },
+  "title": "DATEJUST",
+  "description": "Đồng hồ biểu tượng của phong cách cổ điển",
+  "price": 15000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2F1.webp?alt=media&token=d173b5fe-cdb4-46fc-89cd-32110a1298d2",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fdasadsdsa.webp?alt=media&token=a41b2d6a-7a95-47c0-929e-2bf4d5387a0e"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-12T03:49:55.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-12T03:49:55.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a471338d6cddc99eb61c7"
+  },
+  "title": "Yacht-Master",
+  "description": "The watch of the open seas",
+  "price": 1600054000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0008_m124060-0001-submariner.webp?alt=media&token=5880877b-8d17-4cfb-8869-43b45f9b6d5b",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0009_m116900-0001-air-king.webp?alt=media&token=bacf6468-0696-43d6-a24a-8db150349483",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0010_m116681-0002-yacht-master-ii.webp?alt=media&token=cbd92f8a-b3a4-4285-9082-3af7dd11964b",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=c4122305-0a84-4d75-9deb-39b0a76eccbc",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116519ln-0038-cosmograph-daytona.webp?alt=media&token=8f541a01-a902-4a3d-a6a0-35cc5b18967e",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0013_m86409rbr-0001-pearlmaster-39.webp?alt=media&token=ee824c29-b55f-4ccb-b89b-e0bf2206984f",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=5624dab4-5033-4460-864f-83922ce3d71a"
+  ],
+  "category": {
+    "$oid": "616a44db38d6cddc99eb618c"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a480838d6cddc99eb621c"
+  },
+  "title": "Explorer",
+  "description": "The call of the peaks",
+  "price": 100900000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0008_m124060-0001-submariner.webp?alt=media&token=1095d404-fcde-4c27-81b7-00269a2e383d",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0009_m116900-0001-air-king.webp?alt=media&token=505e55e6-c956-497c-b20e-a01cd5910645",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0010_m116681-0002-yacht-master-ii.webp?alt=media&token=4910f8e9-49a7-475a-91f6-0b8a583600da",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=e70d6db5-a866-41ca-8532-c537a09f44ee",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116519ln-0038-cosmograph-daytona.webp?alt=media&token=50102608-dc8b-4916-b72a-e81e0e90db5b",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0013_m86409rbr-0001-pearlmaster-39.webp?alt=media&token=289dc531-9b85-4c85-9051-d154041b7ee8",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=1658ba4f-f62e-42c2-b19b-f39acd469cfc"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a488f38d6cddc99eb622d"
+  },
+  "title": "Oyster Perpetual",
+  "description": "The essence of the Oyster",
+  "price": 250000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0000_m326238-0009-sky-dweller.webp?alt=media&token=b0a56632-408f-4e84-904f-724fdc4540e5",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0001_m279138rbr-0015-lady-datejust-28.webp?alt=media&token=68677d73-e6a0-40bb-9d49-8336504f3ca2",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0002_m228239-0033-day-date-40.webp?alt=media&token=235d63e2-5dd2-4235-81d8-80bd1dac41f0",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0004_m124273-0001-explorer.webp?alt=media&token=8929b99f-2b8f-4714-90a7-87f15c22f56a",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0004_m126711chnr-0002-gmt-master-ii.webp?alt=media&token=a38fe1ba-db6f-42d8-8e07-63d3aaf1abd8",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0005_m126603-0001-sea-dweller.webp?alt=media&token=803c58f1-b49b-4b0a-87af-793fb8d5295e"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a48d938d6cddc99eb6235"
+  },
+  "title": "Sky-Dweller",
+  "description": "Keeping track of time across the world",
+  "price": 165000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0007_m124300-0001-perpetual-41.webp?alt=media&token=59a7766b-ac5f-4d0e-b0ea-a8568dbe4c59",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=8828f2c3-064b-4fd2-bd20-f8f46004a8a5",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116519ln-0038-cosmograph-daytona.webp?alt=media&token=ff4f0635-523c-4d79-bbc7-1a3fa40c4807",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0013_m86409rbr-0001-pearlmaster-39.webp?alt=media&token=9a1eb1eb-7501-4173-b611-b9f53e0c1ddd",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=cf220b13-b8d6-4aff-9f8a-78a3462667ca"
+  ],
+  "category": {
+    "$oid": "616a458e38d6cddc99eb6191"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a494f38d6cddc99eb623d"
+  },
+  "title": "GMT-Master II",
+  "description": "The cosmopolitan watch",
+  "price": 140000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0009_m116900-0001-air-king.webp?alt=media&token=647609f6-a9cd-444f-bb2d-0fadaee3e315",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0010_m116681-0002-yacht-master-ii.webp?alt=media&token=5402cf3e-5d57-4bbc-b3aa-8c7bd7b4ad4f",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=ba3c654e-76f1-427f-be3c-08d4c3982a86",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=2a6e506f-6fd3-4f05-ba65-3f9d7aa047a1"
+  ],
+  "category": {
+    "$oid": "616a45ce38d6cddc99eb6196"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a65d038d6cddc99eb64e8"
+  },
+  "title": "Air-King",
+  "description": "A homage to aviation",
+  "price": 160000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0013_m86409rbr-0001-pearlmaster-39.webp?alt=media&token=eacf2167-2153-4d29-bf0b-4dad902990cf",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=7350805b-1ab4-4101-b1d1-17c7eafc3368"
+  ],
+  "category": {
+    "$oid": "616a44db38d6cddc99eb618c"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a660238d6cddc99eb64f0"
+  },
+  "title": "Pearlmaster",
+  "description": "The pearl in the Oyster collection",
+  "price": 162000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0009_m116900-0001-air-king.webp?alt=media&token=26eb322e-93e8-4e12-b57a-4cb8f4d7e463",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=bfad25bd-b590-440b-9610-63a6fde256db",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0013_m86409rbr-0001-pearlmaster-39.webp?alt=media&token=53e7a919-6085-443b-9170-db364a60a66a",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0014_m50535-0002-cellini-moonphase.webp?alt=media&token=82b7b3f6-00b1-4bba-a1bb-851b58ff6744"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a662838d6cddc99eb64f8"
+  },
+  "title": "Cellini",
+  "description": "The classical watch",
+  "price": 175000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0002_m228239-0033-day-date-40.webp?alt=media&token=b9cde52b-4747-40d8-9592-d8f3ed974bf8",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0003_m126200-0020-datejust.webp?alt=media&token=2280eb2e-0bc7-4603-8c05-56f4c159815b"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a664f38d6cddc99eb6500"
+  },
+  "title": "Milgauss",
+  "description": "Honouring science",
+  "price": 1685000000,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0010_m116681-0002-yacht-master-ii.webp?alt=media&token=e0fe34d3-ec79-4db7-8a29-792f6b970db0",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=4b722be5-aaff-486e-a31e-6e774782782f"
+  ],
+  "category": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.608Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616fc8bd80aca86a9b30c74b"
+  },
+  "title": "dung123",
+  "description": "dunasg",
+  "price": 1456656,
+  "imageURL": [
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2F1.webp?alt=media&token=66e5b222-491a-4c7a-9015-9b53dcab0987",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fdasadsdsa.webp?alt=media&token=51ef7481-cdf7-4af9-88d6-0c189472e534",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm124300-0001.webp?alt=media&token=45d8e45b-d075-4016-bf8b-01c263207e1a",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm124300-0002.webp?alt=media&token=6f3ebd3a-1831-48c1-a7bb-f409c8faaf28",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm126000-0004.webp?alt=media&token=702b13d2-914f-4894-b9b2-764042ec8e68",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm126000-0006.webp?alt=media&token=29e00f4d-5307-4f38-8578-dffe19b14795",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm126000-0008.webp?alt=media&token=2a1ee9fb-a3e5-487c-8889-de6ac106c328",
+    "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fm277200-0008.webp?alt=media&token=2c2abd2a-c15c-4034-8ee7-ff73b7bd350f"
+  ],
+  "category": {
+    "$oid": "616a44db38d6cddc99eb618c"
+  },
+  "information": {
+    "kichthuoc": "40MM",
+    "doday": "7MM",
+    "loaimay": "MIYOTA QUARTZ",
+    "kichcoday": "20MM",
+    "chongnuoc": "3ATM",
+    "matkinh": "SAPPHIRE",
+    "chatlieuday": "DÂY KIM LOẠI"
+  },
+  "createdAt": {
+    "$date": "2021-10-20T06:21:44.107Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-20T06:21:44.107Z"
+  },
+  "__v": 0
+}]

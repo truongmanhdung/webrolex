@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "616554938f2b7502d93f56df"
+  },
+  "title": "Đồng hồ Nữ",
+  "imageURL": "Đồng hồ thời thượng",
+  "price": 15425522,
+  "createdAt": {
+    "$date": "2021-10-12T09:24:22.066Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-12T09:24:22.066Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "615e54f19f4d381abb8fafed"
+  },
+  "title": "Đồng hồ Rolex",
+  "imageURL": "https://content.rolex.com/dam/new-watches-2021/homepage/roller/all-watches/watches_0012_m116519ln-0038-cosmograph-daytona.jpg?imwidth=420",
+  "videoURL": "https://content.rolex.com/dam/homepage/hss/watches/professional-watches/yacht-master/homepage-yacht-master-42_m226659-0002.mp4",
+  "createdAt": {
+    "$date": "2021-10-07T01:48:40.285Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a44db38d6cddc99eb618c"
+  },
+  "title": "Đồng hồ mới 2021",
+  "imageURL": "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0009_m116900-0001-air-king.webp?alt=media&token=a20d9f86-92d0-4b81-84bd-9410cd9af831",
+  "videoURL": "https://content.rolex.com/dam/new-watches-2021/hub/new-watches-2021/videos/new-watches-2021-hub-cover.mp4",
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a458e38d6cddc99eb6191"
+  },
+  "title": "Đồng hồ nam",
+  "imageURL": "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0010_m116681-0002-yacht-master-ii.webp?alt=media&token=a55fbce0-7347-44ed-a9ec-639b3a6813d5",
+  "videoURL": "https://content.rolex.com/dam/new-watches-2020/new-oyster-perpetual/videos/cover/new-oyster-perpetual-cover.mp4",
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "616a45ce38d6cddc99eb6196"
+  },
+  "title": "Đồng hồ nữ",
+  "imageURL": "https://firebasestorage.googleapis.com/v0/b/rolex-7eb30.appspot.com/o/images%2Fwatches_0012_m116400gv-0002-milgauss.webp?alt=media&token=88f8246f-095a-4a57-b71f-f132b7cfdb5e",
+  "videoURL": "https://content.rolex.com/dam/watches/family-pages/day-date/video/cover/classic-watches-day-date-cover-video.mp4",
+  "createdAt": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "createdUpdate": {
+    "$date": "2021-10-16T03:06:43.602Z"
+  },
+  "__v": 0
+}]

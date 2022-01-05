@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "6175629d77fc2823119d82fe"
+  },
+  "userId": {
+    "$oid": "6174c1d1e18f7eb132c947d3"
+  },
+  "username": "dũng trương mạnh",
+  "email": "dungtmph12934@fpt.edu.vn",
+  "phone": 365727226,
+  "address": "Ngõ 80 Xuân Phương, 124",
+  "total": 201800000,
+  "listorder": [
+    {
+      "idProduct": {
+        "$oid": "616a480838d6cddc99eb621c"
+      },
+      "quantity": 2,
+      "_id": {
+        "$oid": "6175629d77fc2823119d82ff"
+      }
+    }
+  ],
+  "status": 4,
+  "createdAt": {
+    "$date": "2021-10-24T13:13:22.342Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617654de13decbd0118e4bdd"
+  },
+  "userId": {
+    "$oid": "6174bffce18f7eb132c94760"
+  },
+  "username": "dũng trương mạnh",
+  "email": "dungtmph12934@fpt.edu.vn",
+  "phone": 365727226,
+  "address": "Ngõ 80 Xuân Phương, 124",
+  "total": 4800162000,
+  "listorder": [
+    {
+      "idProduct": {
+        "$oid": "616a471338d6cddc99eb61c7"
+      },
+      "quantity": 3,
+      "_id": {
+        "$oid": "617654de13decbd0118e4bde"
+      }
+    }
+  ],
+  "status": 2,
+  "createdAt": {
+    "$date": "2021-10-25T06:09:56.663Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617663f013decbd0118e4c8a"
+  },
+  "userId": {
+    "$oid": "6176631913decbd0118e4c63"
+  },
+  "username": "dũng trương mạnh",
+  "email": "dungtmph12934@fpt.edu.vn",
+  "phone": 365727226,
+  "address": "Ngõ 80 Xuân Phương, 124",
+  "total": 1009000000,
+  "listorder": [
+    {
+      "idProduct": {
+        "$oid": "616a480838d6cddc99eb621c"
+      },
+      "quantity": 10,
+      "_id": {
+        "$oid": "617663f013decbd0118e4c8b"
+      }
+    }
+  ],
+  "status": 2,
+  "createdAt": {
+    "$date": "2021-10-25T06:09:56.663Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6176646513decbd0118e4cc7"
+  },
+  "userId": {
+    "$oid": "6176631913decbd0118e4c63"
+  },
+  "username": "dung1234",
+  "email": "dungtmph12934@fpt.edu.vn",
+  "phone": 545665,
+  "address": "saddsasa",
+  "total": 201800000,
+  "listorder": [
+    {
+      "idProduct": {
+        "$oid": "616a480838d6cddc99eb621c"
+      },
+      "quantity": 2,
+      "_id": {
+        "$oid": "6176646513decbd0118e4cc8"
+      }
+    }
+  ],
+  "status": 1,
+  "createdAt": {
+    "$date": "2021-10-25T06:09:56.663Z"
+  },
+  "__v": 0
+}]

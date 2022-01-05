@@ -57,47 +57,47 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res) => {
-  const { username, email, password, avatar } = req.body;
-
+  const { username, email, hashed_password, avatar } = req.body;
+  console.log("Connect",hashed_password);
   // validation
-  if (!username || !email || !password) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Messing username or password" });
-  }
-  try {
-    const user = await User.findOne({ username });
-    if (user) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Username already in use" });
-    }
+  // if (!username || !email || !password) {
+  //   return res
+  //     .status(400)
+  //     .json({ success: false, message: "Messing username or password" });
+  // }
+  // try {
+  //   const user = await User.findOne({ username });
+  //   if (user) {
+  //     return res
+  //       .status(400)
+  //       .json({ success: false, message: "Username already in use" });
+  //   }
 
-    const hasPassword = await argon2.hash(password);
-    const newUser = new User({
-      username,
-      email,
-      password: hasPassword,
-      avatar:
-        avatar ||
-        "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
-    });
-    await newUser.save();
-    // return token
-    const accessToken = jwt.sign(
-      { userId: newUser._id },
-      process.env.ACCESS_TOKEN_SECRET
-    );
-    res.json({
-      success: true,
-      username: newUser.username,
-      message: "register successfully",
-      token: accessToken,
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
-  }
+  //   const hasPassword = await argon2.hash(password);
+  //   const newUser = new User({
+  //     username,
+  //     email,
+  //     password: hasPassword,
+  //     avatar:
+  //       avatar ||
+  //       "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
+  //   });
+  //   await newUser.save();
+  //   // return token
+  //   const accessToken = jwt.sign(
+  //     { userId: newUser._id },
+  //     process.env.ACCESS_TOKEN_SECRET
+  //   );
+  //   res.json({
+  //     success: true,
+  //     username: newUser.username,
+  //     message: "register successfully",
+  //     token: accessToken,
+  //   });
+  // } catch (error) {
+  //   console.log(error);
+  //   res.status(500).json({ success: false, message: "Internal server error" });
+  // }
 };
 
 const getAll = async (req, res) => {
